@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductsItemComponent } from './components/products-item/products-item.component';
+
 
 @NgModule({
   declarations: [
@@ -14,10 +15,10 @@ import { ProductsItemComponent } from './components/products-item/products-item.
     ProductsItemComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

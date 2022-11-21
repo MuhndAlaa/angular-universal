@@ -1,6 +1,7 @@
 
-<div class="product-item" *ngIf="(product$ | async) as product">
-    <h3>{{product.title}}</h3>
-    <p>{{product.description}}</p>
-    <h5>{{product.price}}</h5>
+<div class="product-item">
+    <h3>{{product?.title}}</h3>
+    <p>{{product?.description}}</p>
+    <h5>{{product?.price}}</h5>
+    <img *ngFor="let image of product?.images" [src]="image" [alt]="'product' + product.title + 'image'">
 </div>

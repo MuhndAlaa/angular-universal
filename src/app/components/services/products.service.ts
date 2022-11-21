@@ -11,10 +11,10 @@ export class ProductsService {
   constructor(private _http:HttpClient) {}
 
   getProducts():Observable<any>{
-    return this._http.get('https://fakestoreapi.com/products')
+    return this._http.get('https://api.escuelajs.co/api/v1/products?offset=0&limit=10')
   }
 
   getProductById(id:number):Observable<any>{
-    return this._http.get(`https://fakestoreapi.com/products/${id}`)
+    return this._http.get(`https://api.escuelajs.co/api/v1/products/${id}`)
   }
 }
